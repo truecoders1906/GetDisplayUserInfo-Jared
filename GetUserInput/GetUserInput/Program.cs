@@ -37,6 +37,9 @@ namespace GetUserInput
                 string PetName = Console.ReadLine();
                 ArrayOfPetNames[i] = PetName;
             }
+            Console.Clear();
+            LoadingBar();
+            Thread.Sleep(2000);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("--------------");
             Console.WriteLine("Final Results:");
@@ -60,11 +63,10 @@ namespace GetUserInput
             }
             else
             {
-                Console.WriteLine("You have no pets");
+                Console.WriteLine("You own no pets");
             }
             Thread.Sleep(1000);
-            Console.WriteLine("Your favorite number is " + FavoriteNumber);
-
+            Console.WriteLine("and your favorite number is " + FavoriteNumber);
 
 
         }
@@ -97,6 +99,25 @@ namespace GetUserInput
             } while (success == false && ChecksPositive == true);
             
             return integerFromUser;
+        }
+
+        static void LoadingBar()
+        {
+            Console.WriteLine("Processing...");
+            for (int i = 0; i <= 50; i++)
+            {
+                for (int y = 0; y < i; y++)
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("█");
+                    Console.ResetColor();
+                }
+                Console.Write(i + "/50");
+                Console.SetCursorPosition(0,1);
+                Thread.Sleep(100);
+            }
+            Console.SetCursorPosition(0,2);
+            Console.WriteLine("Complete!");
         }
     }
 }
