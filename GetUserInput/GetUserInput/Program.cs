@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Threading;
+
+
+
 namespace GetUserInput
 {
     class Program
@@ -15,6 +18,7 @@ namespace GetUserInput
                 Names of All Pets
                 Any other information you want to ask about
             */
+
             Console.WriteLine("Hello!");
             Console.WriteLine("What is your first name?");
             string FirstName = Console.ReadLine();
@@ -118,6 +122,7 @@ namespace GetUserInput
             }
             Console.SetCursorPosition(0,2);
             Console.WriteLine("Complete!");
+
         }
     }
 }
