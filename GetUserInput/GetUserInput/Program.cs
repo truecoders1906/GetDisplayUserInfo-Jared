@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Threading;
 namespace GetUserInput
 {
     class Program
@@ -37,19 +37,32 @@ namespace GetUserInput
                 string PetName = Console.ReadLine();
                 ArrayOfPetNames[i] = PetName;
             }
-            Console.WriteLine("Hello " + FirstName  + " " + LastName + "!");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("--------------");
+            Console.WriteLine("Final Results:");
+            Console.WriteLine("--------------");
+            Console.ResetColor();
+            Thread.Sleep(2000);
+            Console.WriteLine("Greetings " + FirstName  + " " + LastName + "!");
+            Thread.Sleep(2000);
             if (AmountOfPets > 0)
             {
                 Console.WriteLine("You have " + AmountOfPets + " pets");
+                if (FavoriteNumber == AmountOfPets)
+                {
+                    Console.WriteLine("That is the same as your favorite number!");
+                }
                 for (int i = 0; i < AmountOfPets; i++)
                 {
                     Console.WriteLine("You have a " + ArrayOfPetTypes[i] + " named " + ArrayOfPetNames[i]);
+                    Thread.Sleep(2000);
                 }
             }
             else
             {
                 Console.WriteLine("You have no pets");
             }
+            Thread.Sleep(1000);
             Console.WriteLine("Your favorite number is " + FavoriteNumber);
 
 
